@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de opções</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function iniciarMenu() {
+            nomeCompleto = window.localStorage.getItem("nomeCompleto").split(" ");
+            document.getElementById("msgInicial").innerHTML = `${nomeCompleto[0]} ${nomeCompleto[nomeCompleto.length - 1]}, Seja bem-vindo ao jogo dos Felinos!`;
+        }
+       
+    </script>
+</head>
+
+<body onload="iniciarMenu()">
+
+    <div class="container">
+        <p id="msgInicial"></p><br>
+        <form>
+            <input type="button" class="button" value="Entrar como convidado"
+                onclick="window.open('felino.html','_self')">
+        </form>
+    </div>
+</body>
+
+</html>
