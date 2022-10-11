@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var slidePos = 0;
+        //var vetImagens = ["cel01.jpg", "cel02.jpg", "ce03.jpg"];
+        var idCron;
+        //var vetDescricoes = ["Descrição do produto 1", "Descrição do produto 2", "Descrição do produto 3"];
+        var slideShow = [   
+            {img:"cel01.jpg", nome:"Samsung", descricao:"Descrição do produto 1", valor:"R$1.500,00"},
+            {img:"cel02.jpg", nome:"Xiaomi", descricao:"Descrição do produto 2", valor: "R$2.000,00"},
+            {img:"ce03.jpg", nome:"Motorola", descricao:"Descrição do produto 3", valor: "R$2.500,00"}
+
+
+        ];
+
+        function play () {
+            idCron = setInterval(mudarImg, 1000);
+        }
+
+        function mudarImg() {
+            slidePos++;
+            if (slidePos > slideShow.length-1) slidePos = 0;
+            document.getElementById("slideShow").src = `img/${slideShow[slidePos].img}`;
+            document.getElementById("nome").innerHTML = slideShow[slidePos].nome;
+            document.getElementById("descricao").innerHTML = slideShow[slidePos].descricao;
+            document.getElementById("valor").innerHTML = slideShow[slidePos].valor;
+        }     
+
+        function pausar() {
+            clearInterval(idCron);
+        }
+
+    </script>
+</head>
+<body onload = "play()">
+    <img id="slideShow" src="img/cel01.jpg" alt="" onmouseenter="pausar()" onmouseleave="play()">
+    <h2 id="nome">Samsung</h2>
+    <p id="descricao">Descrição do produto 1</p>
+    <p id="valor">R$1.500,00</p>
+</body>
+</html>
