@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+    <script>
+        function moverTxt() {
+            var entrada = document.getElementById('entradaTxt');
+            var saidaTxt = document.getElementById('saidaTxt');
+            saidaTxt.value = entrada.value;
+            entrada.value = " ";
+        }
+
+        function moverTexto() {
+            var time = document.getElementById('segundos').value;
+            setTimeout(moverTxt, 1000 * time);
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="entradaTxt">Insira o texto:</label>
+        <input type="text" id="entradaTxt">
+        <br><br>
+        <label for="saidaTxt">Resultado: </label>
+        <input type="text" id="saidaTxt" disabled>
+        <br><br>
+        <label for="segundos">Segundos: </label>
+        <select name="" id="segundos">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <br><br>
+        <input type="button" value="Clique aqui" id="" onclick="moverTexto()">
+    </form>
+</body>
+</html>

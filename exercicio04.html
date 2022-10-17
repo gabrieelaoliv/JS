@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+    <script>
+        let timer = prompt('Digite o tempo a ser para carregar a página:')
+
+        function showAviso() {
+
+            let aviso = document.getElementById('aviso');
+            aviso.innerHTML = `Por favor, aguarde ${timer} segundos para carregar a página do Google`;
+            timer--;
+            if (timer == -1) {
+                loadPage();
+            }
+        }
+
+        function initWarning() {
+            crono = setInterval(showAviso, 1000);
+        }
+
+        function loadPage() {
+            clearInterval(crono);
+            window.location.href = "https://www.google.com.br/";
+        }
+    </script>
+</head>
+
+<body onload="initWarning()">
+    <h1 style="text-align: center; color: red" id="aviso"></h1>
+</body>
+
+</html>
