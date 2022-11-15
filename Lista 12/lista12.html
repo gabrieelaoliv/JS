@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 12</title>
+    <script src="jwifi.js"></script>
+    <script>
+        let valor;
+        let padrao;
+        function certoErrado() {
+            if (padrao.test(valor)) {
+                alert("Padrao Valido");
+            } else {
+                alert("Padrão invalido, favor se atentar ao padrão obrigatório!");
+            }
+        }
+        function dataNasc() {
+            valor = document.getElementById("txtData").value;
+            padrao = /^\d\d\/\d\d\/\d\d\d\d$/;
+            certoErrado();
+
+        }
+        function validaCPF() {
+            valor = document.getElementById("txtCPF").value;
+            padrao = /^((\d{3}).(\d{3}).(\d{3})-(\d{2}))*$/;
+            certoErrado();
+        }
+        function validaMatricula(){
+            valor = document.getElementById("txtMatricula").value;
+            padrao = /^IFTM-\d{3}\/\d{3}(.)\w{2}$/i;
+            certoErrado();
+        }
+        function validaCod(){
+            valor = document.getElementById("cod_disci").value;
+            padrao = /^MT-\d{2}(.)\d{3}-IFTM$/i;
+            certoErrado();
+        }
+        function validaCod2(){
+            valor = document.getElementById("cod_disci2").value;
+            padrao = /^MT-\d{2}(.)\d{3}-(I|i)(F|f)(T|t)(M|m)$/;
+            certoErrado();
+        }
+        function validaCod3(){
+            valor = document.getElementById("cod_disci3").value;
+            padrao = /^M\s{0,1}T-\d{2}(.)\d{3}-I\s{0,1}F\s{0,1}T\s{0,1}M$/i;
+            certoErrado();
+        }
+        function validaCod4(){
+            valor = document.getElementById("cod_disci4").value;
+            padrao = /^(M|m)\s{0,1}(T|t)-\d{2}(.)\d{3}-(I|i)\s{0,1}(F|f)\s{0,1}(T|t)\s{0,1}(M|m)\s(Uberlândia Centro|Uberlândia)$/;
+            certoErrado();
+        }
+        function nome_campusIF(){
+            valor = document.getElementById("nome_campus").value;
+            padrao = /^(IFTM campus Uberlândia|IFTM campus Uberlândia Centro)$/;
+            certoErrado();
+        }
+        function valida_telefone(){
+            valor = document.getElementById("telefone1").value;
+            padrao = /^[+]\d{2}[(]\d{2}[)]\d{4,5}-\d{4}$/;
+            certoErrado();
+        }
+        function valida_telefone2(){
+            valor = document.getElementById("telefone2").value;
+            padrao = /^[(]\d{2,3}[)]\d{4,5}-\d{4}$/;
+            certoErrado();
+        }
+        function valida_altura(){
+            valor = document.getElementById("altura").value;
+            padrao =  /^[1](.|,)[3-9]|[1](.|,)[3-9][0-9]|[2](.|,)[5][0]|[2](.|,)[0-4][0-9]|[2](.|,)[5]$/;
+            certoErrado();
+        }
+        function valida_faturamento(){
+            valor = document.getElementById("faturamento").value;
+            padrao =  /^(R\$)[0-9]{1}[0-9]{0,2}(\.[0-9]{3}){0,3}(\,[0-9]{1,2})$/;
+            certoErrado();
+        }
+        function valida_cronometro(){
+            valor = document.getElementById("tempo").value;
+            padrao = /^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9]):[0-9][0-9]?$/;
+            certoErrado();
+           
+        }
+        function valida_senha(){
+    valor = document.getElementById("senha").value;    
+    padrao = /^[A-Za-z0-9.-_]{5,}&[A-Pa-p]{1,}\.[a-z]{1,}\.[A-Za-z0-5]{1,}-[^0-9]{1,},[^A-Za-zÀ-ú0-9]{2}.[^ab01]{1,}$/;
+    certoErrado();
+}
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="">a) Data de nascimento:</label>
+        <input type="text" id="txtData" value="16/12/1994">
+        <input type="button" value="Validar" onclick="dataNasc()">
+    </form>
+    <br>
+    <form>
+        <label for="">b) CPF:</label>
+        <input type="text" id="txtCPF" value="000.000.000-00" onkeypress="inserirMascara('txtCPF', '000.000.000-00')">
+        <input type="button" value="Validar" onclick="validaCPF()">
+    </form>
+    <br>
+   <form>
+        <label for="">c) Matrícula:</label>
+        <input type="text" id="txtMatricula" value="IFTM-123/123.AB">
+        <input type="button" value="Validar" onclick="validaMatricula()">
+    </form>
+    <br>
+    <form>
+        <label for="">d) Código de uma disciplina:</label>
+        <input type="text" id="cod_disci" value="MT-01.123-IFTM" onkeypress="inserirMascara('cod_disci', 'MT-00.111-IFTM')">
+        <input type="button" value="Validar" onclick="validaCod()">
+    </form>
+    <br>
+    <form>
+        <label for="">e) Código de uma disciplina (versão 2): </label>
+        <input type="text" id="cod_disci2" value="MT-02.456-Iftm" onkeypress="inserirMascara('cod_disci2', 'MT-22.321-Iftm')">
+        <input type="button" value="Validar" onclick="validaCod2()">
+    </form>
+    <br>
+    <form>
+        <label for="">f) Código de uma disciplina (versão 3):</label>
+        <input type="text" id="cod_disci3" value="M T-03.678-Iftm">
+        <input type="button" value="Validar" onclick="validaCod3()">
+    </form>
+    <br>
+    <form>
+        <label for="">g) Código de uma disciplina (versão 4):</label>
+        <input type="text" id="cod_disci4" value="MT-04.901-Iftm Uberlândia Centro">
+        <input type="button" value="Validar" onclick="validaCod4()">
+    </form>
+    <br>
+    <form>
+        <label for="">h) Nome do campus do IFTM:</label>
+        <input type="text" id="nome_campus" value="IFTM campus Uberlândia Centro">
+        <input type="button" value="Validar" onclick="nome_campusIF()">
+    </form>
+    <br>
+    <form>
+        <label for="">i) Telefone:</label>
+        <input type="text" id="telefone1" value="+55(34)11111-1111" onkeypress="inserirMascara('telefone1', '+55(34)11111-1111')">
+        <input type="button" value="Validar" onclick="valida_telefone()">
+    </form>
+    <br>
+    <form>
+        <label for="">j) Telefone 2:</label>
+        <input type="text" id="telefone2" value="(000)11111-1111">
+        <input type="button" value="Validar" onclick="valida_telefone2()">
+    </form>
+    <br>
+    <form>
+        <label for="">k) Altura de uma pessoa:</label>
+        <input type="text" id="altura" value="1,69">
+        <input type="button" value="Validar" onclick="valida_altura()">
+    </form>
+    <br>
+    <form>
+        <label for="">l) Faturamento anual de uma empresa:</label>
+        <input type="text" id="faturamento" value="R$1.500,41">
+        <input type="button" value="Validar" onclick="valida_faturamento()">
+    </form>
+    <br>
+    <form>
+        <label for="">m) Cronômetro:</label>
+        <input type="text" id="tempo" value="20:30:10:01" onkeypress="inserirMascara('tempo', '20:30:10:01')">
+        <input type="button" value="Validar" onclick="valida_cronometro()" >
+    </form>
+    <br>
+    <form>
+        <label for="">n) Senha:</label>
+        <input type="text" id="senha" value="0987.&a.iuo.XZ-@@,*#.xu">
+        <input type="button" value="Validar" onclick="valida_senha()">
+    </form>
+</body>
+</html>
