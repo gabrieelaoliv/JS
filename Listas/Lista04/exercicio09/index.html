@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        nroPessoas = prompt ("Quantas pessoas?", "4");
+
+        pessoas = [];
+        for (i=0; i<nroPessoas; i++)
+            pessoas.push(prompt(`Digite o nome ${i+1}: `, `Fulano ${i+1}`));
+         
+            for (i=0; i<nroPessoas; i++) {
+                indiceSorteado = parseInt(Math.random()*pessoas.lenght);
+                document.write(`p>${i+1}&#176; - ${pessoas[indiceSorteado]}</p><hr>`);
+                pessoas.splice (indiceSorteado, 1);
+            }
+
+
+    </script>
+</body>
+</html>
