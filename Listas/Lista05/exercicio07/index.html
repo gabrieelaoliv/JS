@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+    <script src="js/script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        th {
+            font-size: 24px;
+            color: blue;
+            font-family: Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <th align="center" colspan="3">Acesso ao Sistema</th>
+            </tr>
+            <tr>
+                <td align="right"><label for="login">Login: </label></td>
+                <td colspan="2"><input id="login" name="" size="27" type="text" /></td>
+            </tr>
+            <tr>
+                <td align="right"><label for="senha">Senha: </label></td>
+                <td><input id="senha" name="" size="10" type="password" /></td>
+                <td style="color: red">(max. 8 caracteres)</td>
+            </tr>
+            <tr>
+                <td><label for="confSenha">Confirmar Senha: </label></td>
+                <td><input id="confSenha" name="" size="10" type="password" /></td>
+                <td style="color: red">(max. 8 caracteres)</td>
+            </tr>
+            <tr>
+                <td align="center" colspan="3">
+                    <input onclick="validar()" type="button" value="Entrar" />
+                    <button type="reset">Limpar</button>
+                </td>
+            </tr>
+        </table>
+
+    
+</body>
+</html>
