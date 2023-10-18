@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/felinos.js" defer></script>
+</head>
+<body>
+    <div class="boxFora">
+        <div class="boxInterna">
+            <img src="Imagens/gato01.gif" alt="" id="gato01">
+            <p>Clique em mim!</p>
+        </div>
+
+        <div class="boxInterna">
+            <img src="Imagens/gato02.gif" alt="" id="gato02">
+            <p>Clique sobre mim varias vezes</p>
+            <p>Carinhos: <label id="contGato">0</label></p>
+        </div>
+
+        <div class="boxInterna">
+            <img src="Imagens/gato03.gif" alt="" onmouseenter="gato03(6)" onmouseleave="gato03(3)" id="gato03">
+            <p>Passe o cursor do mouse sobre mim!</p>
+        </div>
+
+        <div class="boxInterna">
+            <img src="Imagens/gato04.gif" alt="" onmousemove="gato04(1)" onmouseleave="gato04(2)" >
+            <p id="gato04">lá lá lá lá lá lá </p>
+        </div>
+
+        <div class="boxInterna">
+            <img src="Imagens/gato05.gif" alt="">
+            <form>
+                <input type="button" value="Gerar número da sorte" id="gato05">
+                <input type="text" id="cxNumero" disabled>
+            </form>
+        </div>
+    </div> 
+</body>
+</html>
