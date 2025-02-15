@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo - É par?</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div>
+            <label for="nivel">Nível:</label>
+            <select name="" id="nivel">
+                <option value="inicio">Selecione</option>
+                <option value="facil"> Fácil</option>
+                <option value="medio">Médio</option>
+                <option value="dificil">Difícil</option>
+            </select>
+        </div>
+
+        <p>Tempo: <span id="tempo">00:00</span></p>
+
+        <div>
+            <button id="btnIniciar">INICIAR</button>
+            <button id="btnPausar">PAUSAR</button>
+            <button id="btnParar">PARAR</button>
+            <button id="btnSair">SAIR</button>
+        </div>
+    </header>
+
+    <main>
+        <span id="numero">_</span>
+        <audio src="" id="music"></audio>
+        <audio src="" id="hit"></audio>
+    </main>
+
+    <footer>
+        <p>Acertos: <span id="acertos">0</span> (<span id="acertosPorcentagem">0.0%</span>) </p>
+        <p>Erros: <span id="erros">0</span></p>
+        <p>Números pares sorteados: <span id="pares">0</span></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+</body>
+
+</html>
